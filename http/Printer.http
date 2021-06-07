@@ -1,0 +1,46 @@
+// Teste de Requisições - Printers
+
+@baseURL = http://localhost:4001
+@id = 60bd7aacf5236d102226df89
+
+###
+// GET - Lista as impressoras
+GET {{baseURL}}/printers
+Content-Type: application/json
+
+###
+// GET - Lista impressoras ID
+GET  {{baseURL}}/printers/{{id}}
+Content-Type: application/json
+
+###
+// POST - Inclui uma nova impressora
+POST {{baseURL}}/printers
+Content-Type: application/json
+
+{
+    "sxs_printer_name": "Felipe1",
+    "sxs_printer_model": "Felipe",
+    "sxs_printer_toner": "Felipe",
+    "sxs_printer_ip": "0.0.0.0/1",
+    "sxs_printer_local": "Felipe"
+}
+
+###
+// DELETE - Apaga uma impressora através do ID informado
+DELETE {{baseURL}}/printers/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera uma impressora
+PUT {{baseURL}}/printers
+Content-Type: application/json
+
+{
+    "_id": "60bd7b81f7370c10a5bfd3f5",
+    "sxs_printer_name": "Teste",
+    "sxs_printer_model": "Modelo",
+    "sxs_printer_toner": "Toner",
+    "sxs_printer_ip": "0.0.0.0/0",
+    "sxs_printer_local": "Felipe"
+}

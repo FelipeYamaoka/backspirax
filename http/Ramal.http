@@ -1,0 +1,53 @@
+// Teste de Requisições - Ramais
+
+@baseURL = http://localhost:4001
+@id = 60bd9e2f6edb481ae7c447f5
+@idUser = 60bda11f56ff2b1b377d8072
+
+###
+// GET - Lista os Ramais
+GET {{baseURL}}/ramais
+Content-Type: application/json
+
+###
+// GET - Lista Ramais ID
+GET  {{baseURL}}/ramais/{{id}}
+Content-Type: application/json
+
+###
+// GET - Lista o Ramal pelo ID do usuário
+GET  {{baseURL}}/ramais/users/{{idUser}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo ramal
+POST {{baseURL}}/ramais
+Content-Type: application/json
+
+{
+    "sxs_ramal_user": "60bda11f56ff2b1b377d8072",
+    "sxs_ramal_local": "Teste",
+    "sxs_ramal_ramal": "111111",
+    "sxs_ramal_ip": "1999999",
+    "sxs_ramal_mac": "AB:CD:EF:GH:IJ:KL11"
+    
+}
+
+###
+// DELETE - Apaga um ramal através do ID informado
+DELETE {{baseURL}}/ramais/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera um ramal
+PUT {{baseURL}}/ramais
+Content-Type: application/json
+
+{
+    "_id": "60bd959f4b63ed1e71d4bdc3",
+    "sxs_ramal_user": "Teste",
+    "sxs_ramal_local": "TI",
+    "sxs_ramal_ramal": "222548",
+    "sxs_ramal_ip": "172.18.2.1",
+    "sxs_ramal_mac": "AB:CD:EF:GH:IJ:KL"
+}

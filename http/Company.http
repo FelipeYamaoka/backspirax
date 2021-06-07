@@ -1,0 +1,37 @@
+// Teste de Requisições - Company
+
+@baseURL = http://localhost:4001
+@id = 60bd5c8fa6e0520c08c4b7bb
+
+###
+// GET - Lista as companhias
+GET {{baseURL}}/company
+Content-Type: application/json
+
+###
+// GET - Lista companhias ID
+GET  {{baseURL}}/company/{{id}}
+Content-Type: application/json
+
+###
+// POST - Inclui uma nova companhia
+POST {{baseURL}}/company
+Content-Type: application/json
+
+{"sxs_company_country": "Brasil", "sxs_company_name": "TESTE"}
+
+###
+// DELETE - Apaga uma companhia através do ID informado
+DELETE {{baseURL}}/company/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera uma categoria
+PUT {{baseURL}}/company
+Content-Type: application/json
+
+{
+    "_id": "60bd5be2a6e0520c08c4b7ba",
+    "sxs_company_country": "Brasil",
+    "sxs_company_name": "Hiter PUT"
+}

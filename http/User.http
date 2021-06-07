@@ -1,0 +1,42 @@
+// Teste de Requisições - Users
+
+@baseURL = http://localhost:4001
+@id = 60bd86ddbed2f1143bab0ac7
+
+###
+// GET - Lista os usuários
+GET {{baseURL}}/users
+Content-Type: application/json
+
+###
+// GET - Lista usuários ID
+GET  {{baseURL}}/users/{{id}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo usuário
+POST {{baseURL}}/users
+Content-Type: application/json
+
+{
+    "sxs_user_name": "Carina Nunes",
+    "sxs_user_role": "Vendas alguma coisa",
+    "sxs_user_local": "Vendas"
+}
+
+###
+// DELETE - Apaga um usuário através do ID informado
+DELETE {{baseURL}}/users/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera um usuário
+PUT {{baseURL}}/users
+Content-Type: application/json
+
+{
+    "_id": "60bd86ddbed2f1143bab0ac7",
+    "sxs_user_name": "Felipe Yamaoka",
+    "sxs_user_role": "Estagiário de TI",
+    "sxs_user_local": "TI"
+}
