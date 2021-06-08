@@ -13,9 +13,10 @@ router.get('/', async (request, response) => {
     try {
         const ramais = await Ramal
             .find()
-            .sort({ sxs_ramal_user: 1 })
-            .populate("user", "sxs_user_name")
+            .sort({ sxs_ramal_local: 1 })
+            .populate("sxs_ramal_user", "sxs_user_name")
         response.json(ramais);
+        console.log(ramais)
     } catch (err) {
         response.status(500).send({
             errors: [{
@@ -30,7 +31,9 @@ router.get('/', async (request, response) => {
 
 router.get('/:id', async (request, response) => {
     try {
-        const ramais = await Ramal.findById(request.params.id)
+        const ramais = await Ramal
+            .findById(request.params.id)
+            .populate("sxs_ramal_user", "sxs_user_name")
         response.json(ramais);
     } catch (err) {
         response.status(500).send({
@@ -47,9 +50,9 @@ router.get('/:id', async (request, response) => {
 router.get('/users/:id', async (request, response) => {
     try {
         const ramais = await Ramal
-            .findById({"sxs_ramal_user":request.params.id})
-            .sort({sxs_ramal_user })
-            .populate("user", "sxs_user_name")
+            .find({"sxs_ramal_user": request.params.id})
+            .sort({ sxs_ramal_user: 1 })
+            .populate("sxs_ramal_user", "sxs_user_name")
         response.json(ramais);
     } catch (err) {
         response.status(500).send({

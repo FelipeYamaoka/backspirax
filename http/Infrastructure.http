@@ -1,0 +1,60 @@
+// Teste de Requisições - Infra
+
+@baseURL = http://localhost:4001
+@id = 60bee3a961cd460bbe4def10
+@idUser = 60bda11f56ff2b1b377d8072
+
+###
+// GET - Lista a infraestrutura
+GET {{baseURL}}/infra
+Content-Type: application/json
+
+###
+// GET - Lista a máquina ID
+GET {{baseURL}}/infra/{{id}}
+Content-Type: application/json
+
+###
+// GET - Lista o Máquina pelo ID do usuário
+GET {{baseURL}}/infra/users/{{idUser}}
+Content-Type: application/json
+
+###
+// POST - Inclui um novo ramal
+POST {{baseURL}}/infra
+Content-Type: application/json
+
+{
+    "sxs_infra_user": "60bda11f56ff2b1b377d8072",
+    "sxs_infra_hostname": "HTRBRSOLPBCK000",
+    "sxs_infra_model": "Dell Bolado",
+    "sxs_infra_local": "Vendas",
+    "sxs_infra_cisco_amp": "7.13.153307",
+    "sxs_infra_bomgar": "Yes",
+    "sxs_infra_sccm": "Yes",
+    "sxs_infra_service_tag": "T305B2L3",
+    "sxs_infra_os": "Windows 10 Pro"
+}
+
+###
+// DELETE - Apaga um ramal através do ID informado
+DELETE {{baseURL}}/infra/{{id}}
+Content-Type: application/json
+
+###
+// PUT - Altera um ramal
+PUT {{baseURL}}/infra
+Content-Type: application/json
+
+{
+    "_id": "60bee3a961cd460bbe4def10",
+    "sxs_infra_user": "60bda11f56ff2b1b377d8072",
+    "sxs_infra_hostname": "HTRBRSOLP1234",
+    "sxs_infra_model": "Dell Bom",
+    "sxs_infra_local": "Vendas",
+    "sxs_infra_cisco_amp": "7.13.153307",
+    "sxs_infra_bomgar": "NONE",
+    "sxs_infra_sccm": "NONE",
+    "sxs_infra_service_tag": "T305B2L3",
+    "sxs_infra_os": "Windows 10 HOME"
+}

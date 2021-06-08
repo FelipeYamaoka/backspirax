@@ -4,6 +4,7 @@ const InicializaMongoServer = require('./config/Db');
 
 // Definindo as rotas da aplicação
 const rotasCompany = require('./routes/Company');
+const rotasInfra = require('./routes/Infrastructure');
 const rotasPrinter = require('./routes/Printer');
 const rotasRamal = require('./routes/Ramal');
 const rotasUser = require('./routes/User');
@@ -44,6 +45,7 @@ app.get('/', (request, response) => {
 
 // Rotas da Categoria
 app.use('/company', rotasCompany);
+app.use('/infra', rotasInfra);
 app.use('/printers', rotasPrinter);
 app.use('/ramais', rotasRamal);
 app.use('/users', rotasUser);
