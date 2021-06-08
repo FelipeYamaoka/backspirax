@@ -17,5 +17,8 @@
     "express": "^4.17.1",
     "express-validator": "^6.11.1",
     "mongoose": "^5.11.15"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
